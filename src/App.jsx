@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './components/Login';
+import Register from './components/Register';
 import FilmSearch from './components/FilmSearch';
 import ReviewManager from './components/ReviewManager';
 import SavedFilms from './components/SavedFilms';
+import FilmDetails from './components/FilmDetails'; 
 import { useAuth } from './hooks/useAuth';
 
 function App() {
@@ -43,8 +45,9 @@ function App() {
             <Route path="/" element={<FilmSearch />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reviews" element={<ReviewManager />} />
-            <Route path="/register" element={<div>Регистрация (в разработке)</div>} />
+            <Route path="/register" element={<Register />}  />
             <Route path="/saved" element={<SavedFilms />} />
+            <Route path="/details/:id" element={<FilmDetails />} />
           </Routes>
         </div>
       </div>
