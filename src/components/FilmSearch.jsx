@@ -31,7 +31,7 @@ function FilmSearch() {
         sortBy: searchParams.sortBy,
         sortDirection: searchParams.sortDirection,
       };
-      const response = await axios.get('http://localhost:8083/api/catalog/films', {
+      const response = await axios.get('http://localhost:8088/api/catalog/films', {
         params,
         paramsSerializer: (params) =>
           Object.entries(params)

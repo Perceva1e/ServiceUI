@@ -13,7 +13,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/register', formData);
+      const response = await axios.post('http://localhost:8082/api/auth/register', formData);
       login({ ...response.data, success: true });
       navigate('/');
     } catch (error) {

@@ -13,7 +13,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/login', formData);
+      const response = await axios.post('http://localhost:8082/api/auth/login', formData);
       if (response.data.success) {
         login(response.data);
         navigate('/');

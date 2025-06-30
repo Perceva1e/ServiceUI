@@ -4,7 +4,9 @@ import Register from './components/Register';
 import FilmSearch from './components/FilmSearch';
 import ReviewManager from './components/ReviewManager';
 import SavedFilms from './components/SavedFilms';
-import FilmDetails from './components/FilmDetails'; 
+import FilmDetails from './components/FilmDetails';
+import NewReleases from './components/NewReleases';
+import Notifications from './components/Notifications';
 import { useAuth } from './hooks/useAuth';
 
 function App() {
@@ -16,9 +18,11 @@ function App() {
         <nav className="bg-blue-600 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
             <div className="space-x-4">
+              <Link to="/releases" className="hover:underline">Новинки</Link>
               <Link to="/" className="hover:underline">Поиск фильмов</Link>
               <Link to="/reviews" className="hover:underline">Управление отзывами</Link>
               <Link to="/saved" className="hover:underline">Сохранённые фильмы</Link>
+              <Link to="/notifications" className="hover:underline">Уведомления</Link>
             </div>
             <div>
               {user ? (
@@ -45,9 +49,11 @@ function App() {
             <Route path="/" element={<FilmSearch />} />
             <Route path="/login" element={<Login />} />
             <Route path="/reviews" element={<ReviewManager />} />
-            <Route path="/register" element={<Register />}  />
+            <Route path="/register" element={<Register />} />
             <Route path="/saved" element={<SavedFilms />} />
             <Route path="/details/:id" element={<FilmDetails />} />
+            <Route path="/releases" element={<NewReleases />} />
+            <Route path="/notifications" element={<Notifications />} />
           </Routes>
         </div>
       </div>
